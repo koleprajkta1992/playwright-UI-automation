@@ -13,7 +13,7 @@ require('../pages/ScenarioManagerPage');
 const  ScenarioApprovalPage  = 
 require('../pages/ScenarioApprovalPage');
 const loginData = 
-require('../testdata/loginData');
+require('../testData/loginData');
 
 
 const path = require('path');
