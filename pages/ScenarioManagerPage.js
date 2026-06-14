@@ -80,6 +80,11 @@ this.searchInput = page.locator(
 this.scenarioTable = this.page.locator(
   '.MuiTableContainer-root table'
 ).last();
+
+//Metric
+this.createMetricButton = page.getByRole('button', {
+  name: 'Create Metric'
+});
   }
 
   async navigate() {

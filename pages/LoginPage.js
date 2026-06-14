@@ -25,7 +25,7 @@ class LoginPage {
     async navigate() {
 
         await this.page.goto(
-          'https://frontend-uat.emot.solyticspartners.com/org'
+           process.env.BASE_URL
         );
     }
 

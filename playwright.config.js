@@ -1,5 +1,8 @@
 // @ts-check
 import { defineConfig, devices } from '@playwright/test';
+require('dotenv').config();
+
+
 
 /**
  * Read environment variables from file.
@@ -16,7 +19,8 @@ export default defineConfig({
   testDir: './tests',
  timeout:10*10000,
   use: {
-    browserName:'chromium'
+    browserName:'chromium',
+     baseURL: process.env.BASE_URL
   },
 
   /* Configure projects for major browsers */
@@ -25,6 +29,18 @@ export default defineConfig({
       name: 'chromium',
       use: { ...devices['Desktop Chrome'] },
     }
+    // , {
+    //         name: 'setup',
+    //         testMatch: /auth\.setup\.js/,
+    //     },
+    //     {
+    //         name: 'chromium',
+    //         use: {
+    //             browserName: 'chromium',
+    //             storageState: 'playwright/.auth/user.json'
+    //         },
+    //         dependencies: ['setup']
+    //     }
   ]
 });
 

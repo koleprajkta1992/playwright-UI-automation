@@ -14,8 +14,8 @@ const  ScenarioApprovalPage  =
 require('../pages/ScenarioApprovalPage');
 const loginData = 
 require('../testData/loginData');
-
-
+const  CreateMetricPage  = 
+require('../pages/CreateMetricPage');
 const path = require('path');
 
 test(
@@ -150,4 +150,11 @@ await scenarioApprovalPage.addComment(
 
 // Continue
 await scenarioApprovalPage.clickContinue();
+//Metric
+const createMetricPage = new CreateMetricPage(page);
+await scenarioManager.openCreateMetricPage();
+
+await createMetricPage.verifyCreateMetricPageLoaded();
+
 });
+
